@@ -1,5 +1,5 @@
 # polkadotjs
 
-![img](https://github.com/yuuuuuuan/polkadotjs/img2.PNG)
+![img](/img2.PNG)
 
-![img](https://github.com/yuuuuuuan/polkadotjs/img.PNG)
+![img](/img.PNG)
