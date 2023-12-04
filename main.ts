@@ -50,10 +50,10 @@ const subscribeSomethingStoredEvent = async (api: ApiPromise) => {
             const { event, phase } = record;
             const moduleName = 'templateModule';
             const eventName = 'SomethingStored';
-            if (event.section === moduleName && event.method === eventName) {
-               console.log(`Found Event: ${moduleName}.${eventName} (phase=${phase.toString()})`);
-               console.log('SomethingStoredValue:', event.data[0].toString());
-          }
+            //if (event.section === moduleName && event.method === eventName) {
+            console.log(`Found Event: ${moduleName}.${eventName} (phase=${phase.toString()})`);
+            console.log('SomethingStoredValue:', event.data[0].toString());
+          //}
         });
     });
 }
