@@ -45,10 +45,15 @@ const subscribeAlicebalance = async (api: ApiPromise, address: string) => {
 }
 
 const subscribeSomethingStoredEvent = async (api: ApiPromise) => {
-    await api.query.system.events((events) => {
+    api.query.system.events((events) => {
         events.forEach((record) => {
-            const {event} = record;
-            console.log('Value of SomethingStored: ', event.data[0].toHuman());
+            const { event, phase } = record;
+            const moduleName = 'templateModule';
+            const eventName = 'SomethingStored';
+            if (event.section === moduleName && event.method === eventName) {
+               console.log(`Found Event: ${moduleName}.${eventName} (phase=${phase.toString()})`);
+               console.log('SomethingStoredValue:', event.data[0].toString());
+          }
         });
     });
 }
